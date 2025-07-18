@@ -14,14 +14,14 @@ public class UserApi {
         return "main";
     }
 
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @GetMapping("/user")
     public String getUser(){
         return "user";
     }
 
     @GetMapping("/delete")
-    public String deleteUser(){
+    public String deleteUser() {
         return "delete";
     }
 }
